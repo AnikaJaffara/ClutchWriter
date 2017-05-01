@@ -1,0 +1,547 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    @include serif-font;
+}
+
+hr {
+    border-color: $theme-main;
+    border-width: 1.9px;
+    max-width: 700px;
+    @media (max-width: 768px) {
+      max-width: 300px;
+    }
+}
+
+hr.light {
+    border-color: white;
+}
+
+a {
+    @include transition-all;
+    text-decoration: none;
+    color: $theme-green;
+    &:hover,
+    &:focus {
+        color: darken($theme-pink, 10%);
+    }
+}
+
+
+// Text ////////////////////////////////////////////////////////////////////////////////////////////
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include sans-serif-font;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.text-main {
+    color: $theme-main;
+}
+
+.text-light {
+    color: $theme-light;
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+.text-diff {
+    color: $theme-green;
+    font-size: 6em;
+    font-weight: 100;
+}
+
+.text-special {
+  color: $theme-blue;
+  font-weight: 100;
+  line-height: 1.2;
+}
+
+.text-dark {
+    color: $theme-dark;
+    font-weight: 100;
+    text-shadow: 1px 1px $theme-light;
+}
+
+.shadow-main {
+  text-shadow: 2px 2px $theme-main;
+}
+
+.shadow-light {
+  text-shadow: 2px 2px $theme-light;
+}
+
+
+// Backgrounds /////////////////////////////////////////////////////////////////////////////////////
+.bg-main {
+    background-color: $theme-main;
+}
+
+.bg-blue {
+    background-color: $theme-blue;
+}
+
+.bg-green {
+    background-color: $theme-green;
+}
+
+.bg-pink {
+    background-color: $theme-pink;
+}
+
+.bg-white {
+    background-color: $theme-white;
+}
+
+.bg-dark {
+    background-color: $theme-dark;
+}
+
+.bg-light {
+    background-color: $theme-light;
+}
+
+
+// Button Styles ///////////////////////////////////////////////////////////////////////////////////
+.btn-default {
+    @include button-variant($theme-white, $theme-green, $theme-green);
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 7px 111px;
+}
+
+.btn-primary {
+  @include button-variant($theme-white, $theme-green, $theme-green);
+  border-radius: 11px;
+  font-weight: 900;
+}
+
+.btn {
+    @include sans-serif-font;
+    border: none;
+    border-radius: 50px;
+    font-weight: 100;
+    text-transform: lowercase;
+}
+
+.btn-xl {
+    padding: 15px 30px;
+}
+
+
+// Modal ///////////////////////////////////////////////////////////////////////////////////////////
+.modal-dialog{
+  @media (max-width: 950px) {
+    max-width: 95%;
+  }
+}
+
+.modal-content {
+  color: $theme-light;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+
+// Navigation //////////////////////////////////////////////////////////////////////////////////////
+.navbar-default {
+    background-color: $theme-white;
+    border-color: transparent;
+    @include sans-serif-font;
+    @include transition-all;
+    .navbar-header .navbar-brand {
+        color: $theme-green;
+        @include sans-serif-font;
+        font-weight: 700;
+        text-transform: lowercase;
+        &:hover,
+        &:focus {
+            color: $theme-blue;
+        }
+    }
+    .nav {
+        > li {
+            > a,
+            > a:focus {
+                text-transform: lowercase;
+                font-weight: 700;
+                font-size: 13px;
+                color: $theme-green;
+                &:hover {
+                    color: $theme-blue;
+                }
+            }
+            &.active {
+                > a,
+                > a:focus {
+                    color: $theme-green !important;
+                    background-color: $theme-white;
+                    &:hover {
+                        background-color: $theme-white;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 768px) {
+        background-color: $theme-white;
+        .navbar-header .navbar-brand {
+            color: rgba(white, .7);
+            &:hover,
+            &:focus {
+                color: $theme-green;
+            }
+        }
+        .nav > li > a,
+        .nav > li > a:focus {
+            color: $theme-green;
+            &:hover {
+                color: $theme-blue;
+            }
+        }
+        &.affix {
+            background-color: $theme-white;
+            .navbar-header .navbar-brand {
+                color: $theme-green;
+                font-size: 14px;
+                &:hover,
+                &:focus {
+                    color: darken($theme-blue, 10%);
+                }
+            }
+            .nav > li > a,
+            .nav > li > a:focus {
+                color: $theme-green;
+                &:hover {
+                    color: $theme-blue;
+                }
+            }
+        }
+    }
+}
+
+// Spacing /////////////////////////////////////////////////////////////////////////////////////////
+
+section {
+    padding: 100px 0;
+}
+
+aside {
+    padding: 0;
+}
+
+.section-heading {
+    margin-top: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+
+// Header //////////////////////////////////////////////////////////////////////////////////////////
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    @include background-cover;
+    background-position: center;
+    background-image: url("http://res.cloudinary.com/lhk0iappn/image/upload/v1468690487/HeaderBack_npouy4.png");
+    text-align: right;
+    color: $theme-green;
+    // .header-content {
+    //     position: relative;
+    //     text-align: center;
+    //     padding: 100px 15px 100px;
+    //     width: 100%;
+    //     .header-content-inner {
+    //         h1 {
+    //             font-weight: 100;
+    //             margin-top: 0;
+    //             margin-bottom: 0;
+    //         }
+    //         hr {
+    //             margin: 30px auto;
+    //         }
+    //         p {
+    //             font-weight: 300;
+    //             color: rgba(white, .7);
+    //             font-size: 20px;
+    //             margin-bottom: 50px;
+    //         }
+    //     }
+    // }
+    @media (min-width: 768px) {
+        min-height: 100%;
+        .header-content {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            padding: 0 50px;
+            .header-content-inner {
+                max-width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                p {
+                    font-size: 18px;
+                    max-width: 80%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}
+
+.LogoHeader {
+  padding-top: 250px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.Logo {
+  padding: 266px 0px 0px 150px;
+}
+
+.Tag {
+  padding-top: 2em;
+  h2 {
+    font-size: 3em;
+    color: $theme-main;
+    font-weight: 100;
+    line-height: 1;
+    @media (max-width: 730px) {
+      font-size: 2.2em;
+    }
+  }
+}
+
+.Tag2 {
+  color: $theme-white;
+}
+
+.Solution {
+  h2 {
+    font-size: 3em;
+    color: $theme-blue;
+    font-weight: 100;
+    line-height: 1;
+  }
+}
+
+
+// Sections ////////////////////////////////////////////////////////////////////////////////////////
+.SecTag {
+  h2 {
+    font-size: 4em;
+    color: $theme-main;
+    font-weight: 100;
+    line-height: 1;
+    @media (max-width: 768px) {
+      font-size: 2.7em;
+    }
+  }
+}
+
+.SecSubTag {
+  h2 {
+    font-size: 2em;
+    color: $theme-light;
+    font-weight: 900;
+    line-height: 1;
+  }
+}
+
+.SecSubTag2 {
+  h2 {
+    font-size: 2em;
+    color: $theme-main;
+    font-weight: 100;
+    line-height: 1;
+    @media (max-width: 991px) {
+      text-align: center;
+    }
+  }
+}
+
+.SecList {
+  ul {
+  @media (max-width: 991px) {
+    padding: 0;
+  }
+}
+  li {
+    color: $theme-blue;
+    font-size: 2.4em;
+    font-weight: 100;
+    line-height: 1.2;
+    list-style: none;
+    @media (max-width: 991px) {
+      font-size: 2em;
+      text-align: center;
+    }
+  }
+}
+
+.SecGraphic {
+  img {
+    @media (max-width: 991px) {
+      text-align: center;
+      margin: auto;
+    }
+  }
+}
+
+.service-box {
+    max-width: 400px;
+    margin: 50px auto 0;
+    @media (min-width: 992px) {
+        margin: 20px auto 0;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.call-to-action {
+    h2 {
+        margin: 0 auto 20px;
+    }
+}
+
+.EndTag h1 {
+  color: $theme-white;
+}
+
+
+// Footer //////////////////////////////////////////////////////////////////////////////////////////
+.FooterImg {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  @include background-cover;
+  background-position: center;
+  background-image: url("http://res.cloudinary.com/lhk0iappn/image/upload/v1467151598/slice1_2x_eumadj.png");
+  text-align: center;
+  color: $theme-green;
+  border-top: medium solid $theme-green;
+}
+
+.FooterTag {
+    color: $theme-white;
+    font-size: 2.2em;
+    font-weight: 100;
+    line-height: 1;
+  }
+
+  .Contact {
+      color: $theme-white;
+      text-shadow: .7px 1px $theme-dark;
+      font-size: 1.5em;
+      font-weight: 900;
+      line-height: 1;
+      a {
+        text-decoration: none;
+        color: $theme-white;
+        &:hover,
+        &:focus {
+            color: $theme-pink;
+        }
+      }
+    }
+
+.FooterText1  h2 {
+  color: $theme-white;
+  text-shadow: .7px 1px 1px $theme-dark;
+  font-size: 2.2em;
+  font-weight: 100;
+  line-height: 1;
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
+}
+
+.FooterText2  h2 {
+  color: $theme-white;
+  text-shadow: 1px 1px 1px $theme-dark;
+  font-size: 2.2em;
+  font-weight: 100;
+  line-height: 1;
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
+}
+
+#contact .fa {
+    color: $theme-green;
+    font-size: 2.2em;
+}
+
+.Foot {
+  background-color: $theme-blue;
+  color: $theme-white;
+  h6 {
+    font-weight: 200;
+  }
+}
+
+// Bootstrap Overrides /////////////////////////////////////////////////////////////////////////////
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+
+// Highlight Color Customization ////////////////////////////////////////////////////////////////
+::-moz-selection {
+    color: white;
+    text-shadow: none;
+    background: $theme-dark;
+}
+
+::selection {
+    color: white;
+    text-shadow: none;
+    background: $theme-dark;
+}
+
+img::selection {
+    color: white;
+    background: transparent;
+}
+
+img::-moz-selection {
+    color: white;
+    background: transparent;
+}
+
+body {
+    -webkit-tap-highlight-color: $theme-dark;
+}
