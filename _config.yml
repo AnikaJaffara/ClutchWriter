@@ -1,8 +1,8 @@
 # Site settings
-title: CW Home Buyers
-email: sold@cwHomeBuyers.com
-description: > # this means to ignore newlines until "baseurl:"
-baseurl: "/clutchwriter" # the subpath of your site, e.g. /blog/
+title: ClutchWriter Designs
+email: solutions@clutchwriter.com
+description: Launch Your Brand With Custom Content, Design & Strategy
+baseurl: "/clutchwriter"
 url: https:/clutchwriter.com
 
 # Build settings
@@ -10,3 +10,5 @@ markdown: kramdown
 
 
 port: 8000
+
+# > # this means to ignore newlines until "baseurl:"
